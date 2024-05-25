@@ -232,6 +232,18 @@
             };
 
             cities.forEach(city => fetchWeather(city));
+            
+            const updateDate = () => {
+                const dateElement = document.getElementById('date');
+                const now = new Date();
+                const formattedDate = now.toLocaleDateString('en-GB', {
+                    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+                });
+                dateElement.textContent = formattedDate;
+            };
+
+            updateDate();
+            cities.forEach(city => fetchWeather(city));
         });
     </script>
 </body>
