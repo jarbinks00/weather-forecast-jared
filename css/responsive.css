@@ -1,0 +1,241 @@
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1920px) { 
+	.container{
+		max-width: 1470px;
+	}
+}
+@media (min-width: 1366px) and (max-width: 1919.98px) { 
+	.container{
+		max-width: 1250px;
+	}
+	html{
+		font-size: 53.75%;
+	}
+}
+
+@media (min-width: 1200px) and (max-width: 1365.98px) { 
+	html{
+		font-size: 48%;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+	html{
+		font-size: 41%;
+	}
+}
+
+@media (max-width: 991.98px) {
+	html{
+		font-size: 55%;
+	}
+	.about_right p{
+		max-width: 100%;
+	}
+	.banner_img {
+	    height: 43rem;
+	    width: 100%;
+	    position: relative;
+	}
+	.banner_content {
+		min-height: 100%;
+		padding: 8rem 0;
+	}
+	.banner_content h1{
+		max-width: 100%;
+	}
+	.chairman_details {
+	    margin-left: 0rem;
+	}
+	.ceo_details {
+	    margin-right: 0rem;
+	    margin-bottom: 2rem;
+	}
+	.ceo_img{
+		text-align: left;
+	}
+	.directory_search_form form{
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+	}
+	.directory_search_form form>div:first-child{
+		width: 100%;
+		margin-bottom: 2rem;
+	}
+	.directory_search_form form>div:nth-child(3){
+		width: auto;
+	}
+	.directory_search_form form>div:nth-child(2){
+		width: calc(100% - 25rem);
+	}
+	.directory_box {
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+	}
+	.directory_box>div {
+	    width: 100%;
+	    height: auto;
+	    display: -webkit-box;
+	    display: -ms-flexbox;
+	    display: flex;
+	    -webkit-box-align: center;
+	        -ms-flex-align: center;
+	            align-items: center;
+	    -webkit-box-pack: center;
+	        -ms-flex-pack: center;
+	            justify-content: center;
+	    text-align: center;
+	    border-right: none;
+	}
+	.staff_img {
+	    padding-left: 4rem;
+	    padding-right: 4rem;
+	    margin-top: 4rem;
+	    margin-bottom: 2rem;
+	}
+	.staff_details {
+	    padding: 0 4rem;
+	}
+	.staff_mail {
+	    padding: 0 4rem;
+	    margin-bottom: 4rem;
+	}
+	.row.d_table_head{
+		display: none;
+	}
+	.d_table_content h5{
+		display: block;
+	}
+	.d_table_content>div{
+		margin-bottom: 2rem;
+	}
+	.details_content_top{
+		display: block;
+	}
+	.details_content_top .share_events{
+		text-align: left;
+		margin-top: 2rem;
+	}
+	.details_content_top .share_events a{
+		margin-left: 0;
+		margin-right: 1.2rem;
+	}
+	.details_banner {
+	    height: 43rem;
+	}
+}
+
+/*Medium devices (tablets, 767px and down)*/
+@media (max-width: 767.98px) {
+	html{
+		font-size: 38%;
+	}
+}
+
+/*Small devices (landscape phones, 575px and down)*/
+@media (max-width: 575.98px) {
+	html{
+		font-size: 1.8vw;
+	}
+	.container{
+		padding-left: 3rem;
+		padding-right: 3rem;
+	}
+	.footer_bottom ul{
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+	}
+	.footer_logo p {
+	    margin: 2.4rem 0 3rem 0;
+	}
+	.news_right .news_box{
+		display: block !important;
+	}
+	.news_right .news_text{
+		padding: 2rem 0 0 0;
+	}
+	.news_right .news_img img{
+		width: 100%;
+		max-width: 100%;
+	}
+	h1, h2 {
+	    font-size: 4.8rem;
+	}
+	.row{
+		margin-left: -1rem;
+		margin-right: -1rem;
+	}
+	.row>div{
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+	br{
+		display: none;
+	}
+	.lg_text{
+		font-size: 2rem;
+	}
+	.info_title {
+	    padding: 2.5rem 2rem;
+	}
+	.rfp_form iframe {
+	    height: 45rem;
+	}
+	.about_logo img {
+	    width: 28rem;
+	}
+	.chairman_details .top_details, .ceo_details .top_details {
+	    text-align: left;
+	}
+	.staff_directory {
+		padding-top: 4rem;
+	}
+	.cta_content{
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+		-webkit-box-align: start;
+		    -ms-flex-align: start;
+		        align-items: flex-start;
+	}
+	h3 {
+	    font-size: 4rem;
+	    line-height: 1.22;
+	}
+	h4 {
+	    font-size: 3.8rem;
+	}
+	.cta_content .button{
+		margin-top: 3rem;
+	}
+	.tender_details_content>div{
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+	}
+	.tender_details_content>div>div:first-child {
+	    border-right: none;
+	    padding-bottom: 0;
+	    width: 100%;
+	}
+	.requirement_box_head{
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+		-webkit-box-align: start;
+		    -ms-flex-align: start;
+		        align-items: flex-start;
+	}
+	.requirement_box_foot>div{
+		display: block;
+	}
+	.program-schdule-box>div>div:first-child p {
+	    width: 12rem;
+	}
+	.program-schdule-box>div>div:first-child h6:first-child {
+	    width: 12rem;
+	}
+}
+

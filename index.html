@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="app, landing, corporate, Creative, Html Template, Template">
+    <meta name="author" content="web-themes">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1">
+
+    <title>Weather Forecast by Jared</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/fontawesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/responsive.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <main>
+        <section class="sec_pad"  style="background-color: #ffffff;">
+            <div class="container">
+                <div class="section_title">
+                    <h2>Weather Forecast</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-4 mt_35">
+                        <div class="weather_left">
+                            <img style="width: 100%;"id="weather-icon" src="" alt="Weather Icon">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mt_35">
+                        <div class="weather_right">
+                            <h3 id="city">Kuching, Sarawak</h3>
+                            <p id="date">Date</p>
+                            <p id="temperature">--°C</p>
+                            <p id="condition">Condition</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-2"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class=" sec_pad">
+            <div class="container mt_40">
+                <div class="section_title">
+                    <h2>Other Weather Forecast</h2>
+                    <p></p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mt_35" style="margin-bottom: 2px;">
+                        <div class="card_box">
+                            <div class="icon_wrap">
+                                <img class="img-fluid" src="img/kuala_lumpur.svg" alt="">
+                            </div>
+                            <div class="text_wrap">
+                                <h5>Kuala Lumpur</h5>
+                                <p id="kl-temp">--°C</p>
+                                <img id="kl-icon" src="" alt="Weather Icon">
+                                <p id="kl-condition">Condition</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mt_35" style="margin-bottom: 2px;">
+                        <div class="card_box">
+                            <div class="icon_wrap">
+                                <img class="img-fluid" src="img/penang.svg" alt="">
+                            </div>
+                            <div class="text_wrap">
+                                <h5>Penang</h5>
+                                <p id="penang-temp">--°C</p>
+                                <img id="penang-icon" src="" alt="Weather Icon">
+                                <p id="penang-condition">Condition</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mt_35">
+                        <div class="card_box">
+                            <div class="icon_wrap">
+                                <img class="img-fluid" src="img/johor_bahru.svg" alt="">
+                            </div>
+                            <div class="text_wrap">
+                                <h5>Johor Bahru</h5>
+                                <p id="jb-temp">--°C</p>
+                                <img id="jb-icon" src="" alt="Weather Icon">
+                                <p id="jb-condition">Condition</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer-sec">
+            <div class="container">
+              <div class="footer_top">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="footer_inform">
+                      <p>Hi, I'm Jared Jaal Balawan, a Computer Science student skilled in web development, Java, PHP, JavaScript, and Python. Adaptable and innovative.</p>               
+                      <ul class="social_icon">
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+                     </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-sm-8">
+                    <div class="footer_link">
+                      <h5>Contact Details</h5>
+                      <div class="footer_contact align-items-center mb_25">
+                        <span><i class="fas fa-phone"></i></span>
+                        <a href="tel:+601116089742">011-16089742</a>        
+                      </div>
+                      <div class="footer_contact align-items-center mb_25">
+                        <span><i class="fas fa-envelope-open"></i></span>
+                        <a href="mailto:jaredjaalb@gmail.com">jaredjaalb@gmail.com</a>              
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </footer>
+    </main>
+    <a href="#" class="back-to-top"><i class="fal fa-angle-up"></i></a>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // wait for whole page load first
+        document.addEventListener("DOMContentLoaded", () => {
+            // api url used 
+            const API_URL = 'https://api.open-meteo.com/v1/forecast';
+            // return json body for each cities to properly display on html component 
+            const cities = [
+                { name: 'Kuching', latitude: 1.55, longitude: 110.33, tempElement: 'temperature', iconElement: 'weather-icon', conditionElement: 'condition' },
+                { name: 'Kuala Lumpur', latitude: 3.139, longitude: 101.6869, tempElement: 'kl-temp', iconElement: 'kl-icon', conditionElement: 'kl-condition' },
+                { name: 'Penang', latitude: 5.4164, longitude: 100.3327, tempElement: 'penang-temp', iconElement: 'penang-icon', conditionElement: 'penang-condition' },
+                { name: 'Johor Bahru', latitude: 1.4927, longitude: 103.7414, tempElement: 'jb-temp', iconElement: 'jb-icon', conditionElement: 'jb-condition' }
+            ];
+            const params = 'current_weather=true&temperature_unit=celsius';
+            // fetch api from open meteo
+            const fetchWeather = async (city) => {
+                try {
+                    const response = await fetch(`${API_URL}?latitude=${city.latitude}&longitude=${city.longitude}&${params}`);
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    const data = await response.json();
+                    console.log(data)
+                    updateWeather(data.current_weather, city.tempElement, city.iconElement, city.conditionElement);
+                } catch (error) {
+                    console.error('Fetch error:', error);
+                    alert(`Failed to retrieve weather data for ${city.name}`);
+                }
+            };
+
+            const updateWeather = (data, tempElement, iconElement, conditionElement) => {
+                document.getElementById(tempElement).textContent = `${data.temperature}°C`;
+                document.getElementById(iconElement).src = getWeatherIcon(data.weathercode);
+                document.getElementById(conditionElement).textContent = getWeatherDescription(data.weathercode);
+            };
+            // get weather icon from image folder 
+            const getWeatherIcon = (code) => {
+                const iconMap = {
+                    0: 'clear-day.svg',
+                    1: 'clear-day.svg',
+                    2: 'partly-cloudy-day.png',
+                    3: 'cloudy.svg',
+                    45: 'fog.svg',
+                    48: 'fog.svg',
+                    51: 'drizzle.svg',
+                    53: 'drizzle.svg',
+                    55: 'drizzle.svg',
+                    56: 'freezing-drizzle.png',
+                    57: 'freezing-drizzle.png',
+                    61: 'rain.png',
+                    63: 'rain.png',
+                    65: 'rain.png',
+                    66: 'freezing-rain.png',
+                    67: 'freezing-rain.png',
+                    71: 'snow.png',
+                    73: 'snow.png',
+                    75: 'snow.png',
+                    77: 'snow.png',
+                    80: 'rain-showers.png',
+                    81: 'rain-showers.png',
+                    82: 'rain-showers.png',
+                    85: 'snow-showers.png',
+                    86: 'snow-showers.png',
+                    95: 'thunderstorm.png',
+                    96: 'thunderstorm.png',
+                    99: 'thunderstorm.png'
+                };
+                return `img/${iconMap[code]}`;
+            };
+            // weather meaning and description
+            const getWeatherDescription = (code) => {
+                const descriptionMap = {
+                    0: 'Clear sky',
+                    1: 'Mostly clear',
+                    2: 'Partly cloudy',
+                    3: 'Overcast',
+                    45: 'Fog',
+                    48: 'Fog',
+                    51: 'Light drizzle',
+                    53: 'Moderate drizzle',
+                    55: 'Dense drizzle',
+                    56: 'Light freezing drizzle',
+                    57: 'Dense freezing drizzle',
+                    61: 'Light rain',
+                    63: 'Moderate rain',
+                    65: 'Heavy rain',
+                    66: 'Light freezing rain',
+                    67: 'Heavy freezing rain',
+                    71: 'Light snow',
+                    73: 'Moderate snow',
+                    75: 'Heavy snow',
+                    77: 'Snow grains',
+                    80: 'Light rain showers',
+                    81: 'Moderate rain showers',
+                    82: 'Heavy rain showers',
+                    85: 'Light snow showers',
+                    86: 'Heavy snow showers',
+                    95: 'Thunderstorm',
+                    96: 'Thunderstorm with slight hail',
+                    99: 'Thunderstorm with heavy hail'
+                };
+                return descriptionMap[code];
+            };
+
+            cities.forEach(city => fetchWeather(city));
+        });
+    </script>
+</body>
+</html>
+
